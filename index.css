@@ -1,0 +1,161 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+  color: var(--text-color-mode);
+}
+
+:root {
+  --background-mood: url("./assets/bg-mobile.jpg");
+  --surface-color-mode: rgba(255, 255, 255, 0.1);
+  --stroke-color-mode: rgba(255, 255, 255, 0.5);
+  --surface-color-mode-hover: rgba(255, 255, 255, 0.05);
+  --text-color-mode: #fff;
+  --highlight-color-mode: rgba(255, 255, 255, 0.2);
+}
+
+.ligth {
+  --background-mood: url("./assets/bg-mobile-light.jpg");
+  --surface-color-mode: rgba(0, 0, 0, 0.05);
+  --stroke-color-mode: rgba(0, 0, 0, 0.5);
+  --surface-color-mode-hover: rgba(0, 0, 0, 0.02);
+  --text-color-mode: #000;
+  --highlight-color-mode: rgba(0, 0, 0, 0.1);
+}
+
+body {
+  background-image: var(--background-mood);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#container {
+  width: 360px;
+  margin: 56px auto 0px;
+  padding: 0px 24px;
+}
+
+#profile {
+  padding: 24px;
+  text-align: center;
+}
+
+#profile img {
+  width: 100px;
+  height: 100px;
+}
+
+#profile h1 {
+  font-size: 16px;
+  line-height: 24px;
+  margin-top: 8px;
+}
+
+#button_mood {
+  width: 64px;
+  height: 24px;
+  display: block;
+  margin: 0 auto;
+}
+
+#button_mood button {
+  width: 64px;
+  height: 24px;
+  border-radius: 9999px;
+  border: 1px solid var(--stroke-color-mode);
+  background: var(--surface-color-mode);
+  backdrop-filter: blur(4px);
+  display: flex;
+  margin: 24px auto 0px auto;
+  justify-content: start;
+  align-items: center;
+  animation: slide-right 0.3s;
+}
+
+.ligth #button_mood button {
+  animation: slide-left 0.3s forwards;
+}
+
+#button_mood span {
+  background-color: #fff;
+  border-radius: 9999px;
+  padding: 4px;
+  display: inline-flex;
+}
+
+#button_mood span:hover {
+  outline: 6px solid var(--highlight-color-mode);
+}
+
+#button_mood span img {
+  width: 16px;
+  height: 16px;
+}
+
+ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 24px 0;
+}
+
+ul li {
+  padding: 16px 24px;
+  border-radius: 8px;
+  border: 1px solid var(--stroke-color-mode);
+  background: var(--surface-color-mode);
+  transition: background 0.2s;
+}
+
+ul li:hover {
+  border: 1.5px solid var(--text-color-mode);
+  background: var(--surface-color-mode-hover);
+}
+
+ul li a {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  -webkit-backdrop-filter: blur(4px);
+}
+
+#contact_icons {
+  display: flex;
+  padding: 24px 0;
+  justify-content: center;
+  font-size: 24px;
+}
+
+#contact_icons a {
+  padding: 16px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s;
+}
+
+#contact_icons a:hover {
+  background: var(--highlight-color-mode);
+}
+
+@keyframes slide-left {
+  from {
+    justify-content: start;
+  }
+  to {
+    justify-content: end;
+  }
+}
+
+@keyframes slide-right {
+  from {
+    justify-content: end;
+  }
+  to {
+    justify-content: start;
+  }
+}
